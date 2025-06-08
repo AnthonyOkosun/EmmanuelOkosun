@@ -12,7 +12,13 @@ body {
   line-height: 1.6;
   padding: 0 1rem;
 }
-
+/* Logo Styling */
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 a {
   color: #0077cc;
   text-decoration: none;
@@ -92,9 +98,11 @@ h1, h2, h3 {
 }
 
 .profile-pic {
-  width: 150px;
-  border-radius: 50%;
-  margin-bottom: 1rem;
+  width: 220px;
+  height: 220px;
+  display: block;
+  margin: 0 auto 1.5rem auto;
+  object-fit: cover;
 }
 
 /* About Section */
