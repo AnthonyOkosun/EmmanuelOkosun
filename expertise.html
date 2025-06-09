@@ -6,19 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Technical Expertise | Emmanuel Okosun</title>
   <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <link rel="icon" href="favicon.ico" />
+  <script src="script.js" defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        navToggle.classList.toggle('open');
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
-    <div class="logo">E.O</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="expertise.html">Technical Expertise</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="logo">
+      <a href="index.html">
+        <img src="profile.jpg" alt="Emmanuel Okosun Logo" loading="lazy" />
+      </a>
+    </div>
+
+    <div class="nav-wrapper">
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="expertise.html">Technical Expertise</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
   </header>
 
   <main class="expertise scroll-fade-in">
