@@ -34,8 +34,9 @@ a:hover {
 /* Header & Navigation */
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   background-color: #818494;
@@ -44,12 +45,22 @@ header {
   z-index: 1000;
 }
 
+/* Wrapper around nav to center it */
+.nav-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navigation list */
 .nav-list {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: 1.5rem;
+  align-items: center;
 }
 
+/* Nav links */
 nav a {
   font-weight: 500;
 }
@@ -105,17 +116,19 @@ nav a {
 
 /* Hero Section */
 .hero {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  text-align: center;
 }
 
 .fullscreen-photo {
-  width: 100%;
-  height: 100vh;
+  max-width: 90%;
+  max-height: 90%;
   object-fit: cover;
-  display: block;
 }
 
 /* Text Overlay on Hero */
@@ -206,14 +219,21 @@ footer {
     display: flex;
   }
 
+  .nav-wrapper {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+  }
+
   .nav {
     position: absolute;
     top: 70px;
-    right: 1rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     background-color: #d5005a;
-    width: 200px;
+    width: 90%;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -227,24 +247,17 @@ footer {
   .nav-list {
     flex-direction: column;
     gap: 0.75rem;
-    width: 100%;
   }
 
   .nav-list li {
     width: 100%;
+    text-align: center;
   }
 
   .nav-list a {
+    display: block;
     width: 100%;
     padding: 0.5rem 0;
-  }
-
-  .overlay-text h1 {
-    font-size: 1.8rem;
-  }
-
-  .overlay-text p {
-    font-size: 1rem;
   }
 
   .btn {
