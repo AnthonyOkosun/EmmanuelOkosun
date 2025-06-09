@@ -1,25 +1,33 @@
 // script.js
-document.addEventListener("DOMContentLoaded", () => {
-  const scrollElements = document.querySelectorAll(".scroll-fade-in");
 
-  const elementInView = (el, offset = 100) =>
-    el.getBoundingClientRect().top <= window.innerHeight - offset;
+document.addEventListener('DOMContentLoaded', () => {
+  // NAVIGATION TOGGLE
+  const navToggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
 
-  const displayScrollElement = (el) => {
-    el.classList.add("visible");
-  };
-
-  const handleScrollAnimation = () => {
-    scrollElements.forEach((el) => {
-      if (elementInView(el)) {
-        displayScrollElement(el);
-      }
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      navToggle.classList.toggle('open');
     });
-  };
+  }
 
-  window.addEventListener("scroll", () => {
-    handleScrollAnimation();
-  });
+  // EMAIL FORM SUBMISSION (only on contact page)
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    emailjs.init("okosunanthony@gmail.com");
 
-  handleScrollAnimation(); // run on load
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      emailjs.sendForm("service_igduds7", "template_kwljo7m", contactForm)
+        .then(() => {
+          alert("Message sent successfully!");
+          contactForm.reset();
+        }, (error) => {
+          alert("Failed to send message. Please try again.");
+          console.error('EmailJS error:', error);
+        });
+    });
+  }
 });
