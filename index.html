@@ -6,17 +6,33 @@
   <title>Emmanuel Okosun | Mobile & Web Developer</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="favicon.ico" />
-  <script src="script.js" defer></script>
+  <script src="script.js" defer>
+     document.addEventListener('DOMContentLoaded', function () {
+      const navToggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        navToggle.classList.toggle('open');
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
     <div class="logo">
       <a href="index.html">
-        <img src="profile.jpg" alt="Emmanuel Okosun Logo">
+        <img src="profile.jpg" alt="Emmanuel Okosun Logo" loading="lazy">
       </a>
     </div>
-    <nav>
-      <ul>
+
+    <!-- Mobile Nav Toggle Button -->
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+    <!--Navigation Menu-->
+    <nav class="nav">
+      <ul class="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="expertise.html">Technical Expertise</a></li>
         <li><a href="resume.html">Resume</a></li>
@@ -24,10 +40,10 @@
       </ul>
     </nav>
   </header>
-
+  <!--Hero Section of the home page-->
   <section class="hero">
     <div class="hero-content scroll-fade-in">
-      <img src="Home Main Photo.JPG" alt="Emmanuel Okosun" class="large-centered" />
+      <img src="Home Main Photo.JPG" alt="Emmanuel Okosun" class="fullscreen-pic"/>
       <h1>Hi, I'm Emmanuel Okosun</h1>
       <p>I'm a Mobile & Web Developer with a Marketing and Process Engineering background.</p>
       <div class="cta-buttons">
@@ -36,14 +52,14 @@
       </div>
     </div>
   </section>
-
+  <!--About Me Section of the home page-->
   <section class="about scroll-fade-in">
     <h2>About Me</h2>
     <p>
       I’m a passionate Mobile & Web Developer who brings together technical acumen from software development and analytical thinking from process engineering and marketing. With practical experience across a broad spectrum of platforms and programming languages, I aim to build responsive, user-focused solutions.
     </p>
   </section>
-
+  <!--Footer Section of the home page-->
   <footer style="margin-top: 4rem;">
     <p>Connect with me:</p>
     <div class="social-links">
