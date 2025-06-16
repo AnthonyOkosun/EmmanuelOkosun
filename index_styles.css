@@ -37,37 +37,30 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 1rem 0;
+  padding: 1rem;
   border-bottom: 1px solid rgb(0, 0, 0);
   background-color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 1000;
+  position: relative;
 }
 
-/* Wrapper around nav to center it */
+.logo {
+  z-index: 1001;
+}
+
 .nav-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-/* Navigation list */
-.nav-list {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  align-items: center;
-}
-
-/* Nav links */
-nav a {
-  font-weight: 500;
-}
-
-/* Nav Toggle Button (Mobile) */
+/* Updated Nav Toggle */
 .nav-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
   background: none;
   border: none;
   cursor: pointer;
@@ -86,11 +79,12 @@ nav a {
   display: block;
   height: 3px;
   width: 25px;
-  background-color: white;
+  background-color: black;
   margin: 5px auto;
   transition: all 0.3s ease;
   position: relative;
 }
+
 
 .hamburger::before {
   position: absolute;
@@ -259,6 +253,7 @@ footer {
     display: block;
     width: 100%;
     padding: 0.5rem 0;
+    color: yellow; /* updated for mobile visibility */
   }
 
   .btn {
