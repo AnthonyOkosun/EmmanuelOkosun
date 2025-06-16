@@ -81,7 +81,7 @@ header {
   width: 25px;
   background-color: black;
   margin: 5px auto;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
   position: relative;
 }
 

@@ -91,7 +91,7 @@ nav a {
   display: block;
   height: 3px;
   width: 25px;
-  background-color: rgb(0, 0, 0);
+  background-color: white;
   margin: 5px auto;
   position: relative;
 }
